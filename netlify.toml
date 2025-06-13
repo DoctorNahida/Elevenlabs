@@ -1,0 +1,10 @@
+[[redirects]]
+  from = "/*"  # 匹配所有路径
+  to = "https://elevenlabs.ai/:splat"  # 替换为目标网站地址
+  status = 200
+  force = true  # 强制覆盖原始响应
+  headers = {X-Forwarded-Host = "elevenlabs.ai"}  # 传递原始主机头
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"  # 1小时缓存
